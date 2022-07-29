@@ -30,7 +30,7 @@ botaoLimpar.addEventListener('click', function () {
  */
 
 
-    //  **** Resolução ****
+//  **** Resolução ****
 
 let botaoAtualizar = document.getElementById('atualizar-saldo');
 let botaoLimpar = document.getElementById('limpar-saldo')!;
@@ -40,6 +40,8 @@ let campoSaldo = document.getElementById('campo-saldo');
 let saldoTotal = 0
 
 limparSaldo()
+
+//  **** Funções ****
 
 function somarAoSaldo(soma: number) {
     if (campoSaldo) {
@@ -60,11 +62,16 @@ function limparSaldo() {
     }
 }
 
+//  **** condição ****
+
 if (botaoAtualizar) {
     botaoAtualizar.addEventListener('click', () => {
         somarAoSaldo(Number(soma.value)); 
     });
 }
-botaoLimpar.addEventListener('click', () => { // Percebam que aqui o typescript não acusou o botao de ser nulo e não precisei do if. Caso queiram fazer o teste, retirem a exclamação.
+
+//  **** Limpa Campo ****
+
+botaoLimpar.addEventListener('click', () => { 
     limparSaldo();
 });
